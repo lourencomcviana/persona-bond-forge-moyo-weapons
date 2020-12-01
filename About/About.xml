@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModMetaData>
+	<name>Moyo-From the depth persona royalguard glaive </name>
+	<author>Higarian</author>
+	<supportedVersions>
+		<li>1.2</li>
+	</supportedVersions>
+	<packageId>Higarian.PRGG</packageId>
+	<description>
+		Persona moyo royalguard glaive from Moyo-From the depth.
+
+		This is my first mod, i just made the royalguard glaive bondable. 
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>Nemonian.MY</packageId>
+			<displayName>Moyo-From the depth</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2182305386</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>xedos.personabond</packageId>
+			<displayName>Persona Bond Forge</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2178003816</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Nemonian.MY</li>
+		<li>xedos.personabond</li>
+	</loadAfter>
+</ModMetaData>

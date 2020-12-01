@@ -1,0 +1,11 @@
+{
+    "folders": {
+        "1.2" : {
+            "About": "./About",
+            "Patches" : "./1.2/Patches",
+            "Textures": "./Textures",
+            "Sounds": "./Sounds"
+
+        }
+    }
+}
