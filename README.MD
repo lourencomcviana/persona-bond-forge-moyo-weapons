@@ -1,0 +1,1 @@
+If the owner of the moyo mod or the owner of the persona bond mod asks me to remove this, i will remove this
