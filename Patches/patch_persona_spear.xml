@@ -10,7 +10,7 @@
   <xpath>/Defs</xpath>
   <value>
     
-  <ThingDef ParentName="Moyo_GDSpear"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
+  <ThingDef ParentName="BaseWeapon_Bladelink"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
     <defName>Persona_Moyo_GDSpear</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
     <label>persona moyo royalguard glaive</label> <!-- just add "persona" before the original weapons label -->
     <description>Large polearm used by the royal guard. Bigger, heavier, and with an upgraded cryogenic blade.\n\nA modified version of the prototype polearm, the white body and the royal guard’s symbol etched upon it are the blades of the elders.\n\nDespite being designed for close quarters combat, the attached blaster makes it hated by brawlers nevertheless.</description> <!-- just add everthing after the \n to the end of the description -->
