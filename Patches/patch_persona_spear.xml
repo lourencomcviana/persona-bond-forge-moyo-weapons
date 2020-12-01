@@ -123,7 +123,7 @@
 		</projectile>
 	</ThingDef>
   -->
-  <ThingDef ParentName="Bullet_MoyoAssaultBolt">
+  <ThingDef ParentName="BaseBullet">
     <defName>Bullet_MoyoAssaultBolt_Bond</defName> <!-- make sure the defname is different from the original one or it may cause problems -->
     <label>Moyo chargebolt</label>
     <graphicData>
