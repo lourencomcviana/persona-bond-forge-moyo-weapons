@@ -2,7 +2,7 @@
 <Patch>
   <!-- https://pastebin.com/05vxNUed (how to make this xml) -->
   <Operation Class="PatchOperationFindMod">
-  <mods><li>persona moyo royalguard glaive </li></mods>
+  <mods><li>Moyo-From the depth</li></mods>
   <match Class="PatchOperationSequence">
   <success>Normal</success>
   <operations>
@@ -10,10 +10,10 @@
   <xpath>/Defs</xpath>
   <value>
     
-  <ThingDef ParentName="Moyo_GDSpear"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
+  <ThingDef ParentName="BaseWeapon_Bladelink"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
     <defName>Persona_Moyo_GDSpear</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
     <label>persona moyo royalguard glaive</label> <!-- just add "persona" before the original weapons label -->
-    <description>Large polearm used by the royal guard. Bigger, heavier, and with an upgraded cryogenic blade.\n\nA modified version of the prototype polearm, the white body and the royal guard’s symbol etched upon it are the blades of the elders.\n\nDespite being designed for close quarters combat, the attached blaster makes it hated by brawlers nevertheless.</description> <!-- just add everthing after the \n to the end of the description -->
+    <description>Large polearm used by the royal guard. Bigger, heavier, and with an upgraded cryogenic blade.\n\nA modified version of the prototype polearm, the white body and the royal guard’s symbol etched upon it are the blades of the elders.\n\nDespite being designed for close quarters combat, the attached blaster makes it hated by brawlers nevertheless.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description> <!-- just add everthing after the \n to the end of the description -->
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Weapons/Royal/MoyoGHalberd</texPath>
@@ -123,7 +123,7 @@
 		</projectile>
 	</ThingDef>
   -->
-  <ThingDef ParentName="Bullet_MoyoAssaultBolt">
+  <ThingDef ParentName="BaseBullet">
     <defName>Bullet_MoyoAssaultBolt_Bond</defName> <!-- make sure the defname is different from the original one or it may cause problems -->
     <label>Moyo chargebolt</label>
     <graphicData>
