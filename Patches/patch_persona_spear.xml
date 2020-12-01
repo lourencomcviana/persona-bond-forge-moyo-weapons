@@ -152,7 +152,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>Persona_Moyo_GDSpear</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+            <li>Moyo_GDSpear</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
           </thingDefs>
         </filter>
         <count>1</count>
@@ -168,7 +168,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>Persona_Moyo_GDSpear</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+        <li>Moyo_GDSpear</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
         <li>BondingCore</li>
       </thingDefs>
     </fixedIngredientFilter>
