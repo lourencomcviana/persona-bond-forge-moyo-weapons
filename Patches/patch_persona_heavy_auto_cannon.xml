@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- https://pastebin.com/05vxNUed (how to make this xml) -->
+  <Operation Class="PatchOperationFindMod">
+  <mods><li>Moyo-From the depth</li></mods>
+  <match Class="PatchOperationSequence">
+  <success>Normal</success>
+  <operations>
+  <li Class="PatchOperationAdd">
+  <xpath>/Defs</xpath>
+  <value>
+    
+  <ThingDef ParentName="BaseWeapon_Bladelink"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
+    <defName>Persona_Moyo_HeavyAutoCannon</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
+    <label>moyo heavy autocannon</label>
+		<description>Heavy autocannon used by the royal guard. The bolts fired from this weapon is effective on both armored and unarmored targets.\n\nOne of the armaments of the royal guard, the white body etched with the symbol of the royal guard are the hammers of the elders.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+		<soundInteract>Moyo_WeaponInteract</soundInteract>		
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <graphicData>
+			<texPath>Things/Weapons/Royal/MoyoGAutoCannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+
+    <weaponTags Inherit="False"> <!-- if it is a melee weapon change the tag from RangedBladelink to Bladelink or you might run into issues -->
+      <li>RangedBladelink</li>
+      <li>Moyo_GuardianGun</li>
+    </weaponTags>
+
+    <statBases>
+      <MarketValue>3400</MarketValue>
+      <!-- if the market value is not somewhere between 3000 and 3500 stellic defenders will not spawn with them -->
+      <!-- increase all accuracy by 10% and reduce ranged cooldown and warmup time by 10%~25% split between both -->
+      <Mass>5.6</Mass>
+      <AccuracyTouch>1.14</AccuracyTouch>
+      <AccuracyShort>0.63</AccuracyShort>
+      <AccuracyMedium>0.21</AccuracyMedium>
+      <AccuracyLong>0.02</AccuracyLong>
+      <RangedWeapon_Cooldown>0.95</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_MoyoAutoCannon_Bond</defaultProjectile>
+				<ticksBetweenBurstShots>13</ticksBetweenBurstShots>
+				<burstShotCount>6</burstShotCount>	
+				<warmupTime>2</warmupTime>
+				<range>30.5</range>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>11</muzzleFlashScale>
+			</li>
+		</verbs>
+    <tools>
+			<li>
+				<label>body</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+
+		<equippedStatOffsets>
+			<MoveSpeed>-0.1</MoveSpeed>
+		</equippedStatOffsets>
+
+    <thingSetMakerTags>	
+        <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <thingCategories Inherit="False">
+			<li>Moyo_WeaponsRanged</li>
+		</thingCategories>
+    <equippedAngleOffset>45</equippedAngleOffset>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_MoyoAutoCannon_Bond</defName> <!-- make sure the defname is different from the original one or it may cause problems -->
+    <label>moyo heavy chargebolt</label>
+		<graphicData>
+			<texPath>Things/Weapons/MoyoBolt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>20</damageAmountBase> <!-- increase damage for about 6~7 for weapons with 1 bullet per burst and by 5~3 for weapons with more -->
+      <armorPenetrationBase>0.40</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+			<speed>80</speed>
+    </projectile>
+  </ThingDef>
+  <RecipeDef>
+    <defName>Make_Persona_Moyo_HeavyAutoCannon</defName> <!-- just change the defname, description, label and jobstring to match your weapons -->
+    <label>bond a moyo heavy auto cannon</label>
+    <description>bond a moyo heavy auto cannon</description>
+    <jobString>bond a moyo heavy auto cannon</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>200000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Moyo_HeavyAutoCannon</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BondingCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Moyo_HeavyAutoCannon</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+        <li>BondingCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Persona_Moyo_HeavyAutoCannon>1</Persona_Moyo_HeavyAutoCannon> <!-- change "Gun_ChargeRifle" to the persona version of the guns def -->
+    </products>
+    <skillRequirements>
+      <Intellectual>15</Intellectual>
+    </skillRequirements>
+    <workSkill>Intellectual</workSkill>
+    <recipeUsers>
+        <li>BondingBench</li>
+    </recipeUsers>
+  </RecipeDef>
+ 
+    </value>
+    </li>
+    </operations>
+    </match>
+    </Operation>
+    
+ 
+</Patch>
