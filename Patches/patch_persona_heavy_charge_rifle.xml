@@ -11,27 +11,50 @@
   <value>
     
   <ThingDef ParentName="BaseWeapon_Bladelink"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
-    <defName>Persona_Moyo_HeavyAutoCannon</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
-    <label>moyo heavy autocannon</label>
-		<description>Heavy autocannon used by the royal guard. The bolts fired from this weapon is effective on both armored and unarmored targets.\n\nOne of the armaments of the royal guard, the white body etched with the symbol of the royal guard are the hammers of the elders.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+    <defName>Persona_Moyo_HeavyChargeRifle</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
+    <label>persona moyo heavy charge rifle</label>
+		<description>Heavy rifle used by the royal guard. A model focusing almost entirely on firepower, this model is supiror to the original charge rifle in nearly every way save weight and ease of use.\n\nThe first weapon chosen as the armament of the royal guard, the white body etched with the symbol of the royal guard are the spears of the elders.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
 		<soundInteract>Moyo_WeaponInteract</soundInteract>		
     <techLevel>Spacer</techLevel>
     <tradeability>Sellable</tradeability>
     <graphicData>
-			<texPath>Things/Weapons/Royal/MoyoGAutoCannon</texPath>
+			<texPath>Things/Weapons/Royal/MoyoGAR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1</drawSize>
 		</graphicData>
-
+    <thingCategories Inherit="False">
+			<li>Moyo_WeaponsRanged</li>
+		</thingCategories>
     <weaponTags Inherit="False"> <!-- if it is a melee weapon change the tag from RangedBladelink to Bladelink or you might run into issues -->
       <li>RangedBladelink</li>
       <li>Moyo_GuardianGun</li>
     </weaponTags>
 
     <statBases>
+      <MarketValue>4500</MarketValue>
+      <Mass>7</Mass>
+      <AccuracyTouch>0.64</AccuracyTouch>
+      <AccuracyShort>0.74</AccuracyShort>
+      <AccuracyMedium>0.64</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+        <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_MoyoAssaultBolt_Bond</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>28.5</range>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>Shot_NeedleGun</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>11</muzzleFlashScale>
+      </li>
+    </verbs>
+  <!-- <statBases>
       <MarketValue>3400</MarketValue>
-      <!-- if the market value is not somewhere between 3000 and 3500 stellic defenders will not spawn with them -->
-      <!-- increase all accuracy by 10% and reduce ranged cooldown and warmup time by 10%~25% split between both -->
       <Mass>5.6</Mass>
       <AccuracyTouch>1.14</AccuracyTouch>
       <AccuracyShort>0.63</AccuracyShort>
@@ -52,14 +75,14 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>11</muzzleFlashScale>
 			</li>
-		</verbs>
+		</verbs> -->
     <tools><!--6~7 for each damage type-->
 			<li>
-				<label>body</label>
+				<label>stock</label>
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>15</power>
+				<power>9</power>
 				<cooldownTime>2</cooldownTime>
 			</li>
 			<li>
@@ -67,46 +90,36 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>15</power>
+				<power>9</power>
 				<cooldownTime>2</cooldownTime>
 			</li>
 		</tools>
 
-		<equippedStatOffsets>
-			<MoveSpeed>-0.1</MoveSpeed>
-		</equippedStatOffsets>
 
     <thingSetMakerTags>	
         <li>RewardStandardLowFreq</li>
     </thingSetMakerTags>
-    <thingCategories Inherit="False">
-			<li>Moyo_WeaponsRanged</li>
-		</thingCategories>
-    <equippedAngleOffset>45</equippedAngleOffset>
   </ThingDef>
   <ThingDef ParentName="BaseBullet">
-    <defName>Bullet_MoyoAutoCannon_Bond</defName> <!-- make sure the defname is different from the original one or it may cause problems -->
-    <label>moyo heavy chargebolt</label>
+    <defName>Bullet_MoyoAssaultBolt_Bond</defName> <!-- make sure the defname is different from the original one or it may cause problems -->
+    <label>Moyo chargebolt</label>
 		<graphicData>
-			<texPath>Things/Weapons/MoyoBolt</texPath>
+			<texPath>Things/Weapons/MoyoSmallBolt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>1</drawSize>
 		</graphicData>
-
-    <!-- increase damage for about 6~7 for weapons with 1 bullet per burst and by 5~3 for weapons with more -->
     <projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>26</damageAmountBase>
-			<armorPenetrationBase>0.25</armorPenetrationBase>
-			<stoppingPower>2.5</stoppingPower>
-			<speed>70</speed>
-		</projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>19</damageAmountBase> <!-- increase damage for about 6~7 for weapons with 1 bullet per burst and by 5~3 for weapons with more -->
+      <armorPenetrationBase>0.38</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+			<speed>80</speed>
+    </projectile>
   </ThingDef>
   <RecipeDef>
-    <defName>Make_Persona_Moyo_HeavyAutoCannon</defName> <!-- just change the defname, description, label and jobstring to match your weapons -->
-    <label>bond a moyo heavy auto cannon</label>
-    <description>bond a moyo heavy auto cannon</description>
-    <jobString>bond a moyo heavy auto cannon</jobString>
+    <defName>Make_Persona_Moyo_HeavyChargeRifle</defName> <!-- just change the defname, description, label and jobstring to match your weapons -->
+    <label>bond a moyo heavy charge rifle</label>
+    <description>bond a moyo heavy charge rifle</description>
+    <jobString>bond a moyo heavy charge rifle</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
@@ -116,7 +129,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>Moyo_HeavyAutoCannon</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+            <li>Moyo_ChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
           </thingDefs>
         </filter>
         <count>1</count>
@@ -132,12 +145,12 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>Moyo_HeavyAutoCannon</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+        <li>Moyo_ChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
         <li>BondingCore</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Persona_Moyo_HeavyAutoCannon>1</Persona_Moyo_HeavyAutoCannon> <!-- change "Gun_ChargeRifle" to the persona version of the guns def -->
+      <Persona_Moyo_HeavyChargeRifle>1</Persona_Moyo_HeavyChargeRifle> <!-- change "Gun_ChargeRifle" to the persona version of the guns def -->
     </products>
     <skillRequirements>
       <Intellectual>15</Intellectual>

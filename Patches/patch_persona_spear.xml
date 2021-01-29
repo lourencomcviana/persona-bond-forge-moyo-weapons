@@ -66,7 +66,7 @@
                 <li>Poke</li>
                 <li>Blunt</li>
             </capacities>
-            <power>9</power>
+            <power>15</power>
             <cooldownTime>2</cooldownTime>
         </li>		
         <li>
@@ -74,12 +74,12 @@
             <capacities>
                 <li>Cut</li>
             </capacities>
-            <power>28</power>
+            <power>33</power>
             <cooldownTime>2</cooldownTime>
             <extraMeleeDamages>
                 <li>
                     <def>Moyo_Cryo</def>
-                    <amount>10</amount>
+                    <amount>12</amount>
                 </li>
             </extraMeleeDamages>
         </li>
@@ -88,12 +88,12 @@
             <capacities>
                 <li>Poke</li>
             </capacities>
-            <power>28</power>
+            <power>30</power>
             <cooldownTime>2</cooldownTime>
             <extraMeleeDamages>
                 <li>
                     <def>Moyo_Cryo</def>
-                    <amount>10</amount>
+                    <amount>15</amount>
                 </li>
             </extraMeleeDamages>
         </li>

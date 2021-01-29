@@ -1,29 +1,28 @@
 const xml = `
 <statBases>
-        <MarketValue>3400</MarketValue><!-- if the market value is not somewhere between 3000 and 3500 stellic defenders will not spawn with them -->
-        <Mass>5.6</Mass>
-        <AccuracyTouch> 1.04</AccuracyTouch> <!-- increase all accuracy by 10% and reduce ranged cooldown and warmup time by 10%~25% split between both -->
-        <AccuracyShort> 0.57</AccuracyShort>
-        <AccuracyMedium>0.19</AccuracyMedium>
-        <AccuracyLong>  0.02</AccuracyLong>
-        <RangedWeapon_Cooldown>1.12</RangedWeapon_Cooldown>
-    </statBases>
+			<WorkToMake>75000</WorkToMake>
+			<Mass>11</Mass>
+			<AccuracyTouch>0.64</AccuracyTouch>
+			<AccuracyShort>0.91</AccuracyShort>
+			<AccuracyMedium>1</AccuracyMedium>
+			<AccuracyLong>0.87</AccuracyLong>
+			<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+		</statBases>
 `
 const xml2 =`
 <verbs>
-    <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_MoyoAutoCannon_Bond</defaultProjectile>
-        <ticksBetweenBurstShots>13</ticksBetweenBurstShots>
-        <burstShotCount>6</burstShotCount>	
-        <warmupTime>2</warmupTime>
-        <range>30.5</range>
-        <soundCast>Shot_Autocannon</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
-        <muzzleFlashScale>11</muzzleFlashScale>
-    </li>
-</verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_MoyoChargeBolt</defaultProjectile>
+				<forcedMissRadius>0.01</forcedMissRadius>
+				<warmupTime>3</warmupTime>
+				<range>50.9</range>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
 `
 
 const convert = require('xml-js');

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- https://pastebin.com/05vxNUed (how to make this xml) -->
+  <Operation Class="PatchOperationFindMod">
+  <mods><li>Moyo-From the depth</li></mods>
+  <match Class="PatchOperationSequence">
+  <success>Normal</success>
+  <operations>
+  <li Class="PatchOperationAdd">
+  <xpath>/Defs</xpath>
+  <value>
+    
+  <ThingDef ParentName="BaseWeapon_Bladelink"> <!-- this is a tutorial on how to make a patch for persona bond forge. This is the def for the persona charge rifle -->
+    <defName>Persona_Moyo_GDPowerFist</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
+    <label>persona moyo royal powerfist</label>
+		<description>Combat powerfist used by the royal guard. In truth, there is little difference in function compared to an ordinary powerfist.\n\nThe powerfist was chosen as one of the royal guard’s equipment for its versatility. The white shell and the royal guard’s symbol etched upon it are the iron fists of the elders.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
+		<soundInteract>Moyo_WeaponInteract</soundInteract>		
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <graphicData>
+			<texPath>Things/Weapons/Royal/MoyoGFist</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+    <uiIconScale>1.5</uiIconScale>
+    <!-- <thingCategories Inherit="False">
+			<li>Moyo_WeaponsRanged</li>
+		</thingCategories> -->
+    <weaponTags Inherit="False"> <!-- if it is a melee weapon change the tag from RangedBladelink to Bladelink or you might run into issues -->
+      <li>Bladelink</li>
+      <li>Moyo_GuardianMelee</li>
+    </weaponTags>
+
+    <statBases>
+      <MarketValue>4500</MarketValue>
+      <Mass>7.6</Mass>
+    </statBases>
+    <tools><!--6~7 for each damage type-->
+			<li>
+				<label>Fist</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>34</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+			<li>
+				<label>Body</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>34</power>
+				<cooldownTime>1.5</cooldownTime>
+			</li>
+		</tools>
+
+
+    <thingSetMakerTags>	
+        <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <equippedStatOffsets>
+			<ConstructionSpeed>0.1</ConstructionSpeed>
+			<CarryingCapacity>35</CarryingCapacity>
+		</equippedStatOffsets>
+  </ThingDef>
+  <RecipeDef>
+    <defName>Make_Persona_Moyo_GDPowerFist</defName> <!-- just change the defname, description, label and jobstring to match your weapons -->
+    <label>bond a moyo royal powerfist</label>
+    <description>bond a moyo royal powerfist</description>
+    <jobString>bond a moyo royal powerfist</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>200000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Moyo_GDPowerFist</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>BondingCore</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Moyo_GDPowerFist</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+        <li>BondingCore</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Persona_Moyo_GDPowerFist>1</Persona_Moyo_GDPowerFist> <!-- change "Gun_ChargeRifle" to the persona version of the guns def -->
+    </products>
+    <skillRequirements>
+      <Intellectual>15</Intellectual>
+    </skillRequirements>
+    <workSkill>Intellectual</workSkill>
+    <recipeUsers>
+        <li>BondingBench</li>
+    </recipeUsers>
+  </RecipeDef>
+ 
+    </value>
+    </li>
+    </operations>
+    </match>
+    </Operation>
+    
+ 
+</Patch>
