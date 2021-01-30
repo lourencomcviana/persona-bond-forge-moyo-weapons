@@ -129,7 +129,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>Moyo_ChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+            <li>Moyo_HeavyChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
           </thingDefs>
         </filter>
         <count>1</count>
@@ -145,7 +145,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>Moyo_ChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
+        <li>Moyo_HeavyChargeRifle</li> <!-- change "Gun_ChargeRifle" to the gun you want to turn into a persona weapons def -->
         <li>BondingCore</li>
       </thingDefs>
     </fixedIngredientFilter>
