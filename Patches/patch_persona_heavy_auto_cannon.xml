@@ -14,11 +14,11 @@
     <defName>Persona_Moyo_HeavyAutoCannon</defName> <!-- the defname doesnt really matter but it needs to be different from the normal defname in some way -->
     <label>moyo heavy autocannon</label>
 		<description>Heavy autocannon used by the royal guard. The bolts fired from this weapon is effective on both armored and unarmored targets.\n\nOne of the armaments of the royal guard, the white body etched with the symbol of the royal guard are the hammers of the elders.\nThis weapon has an onboard persona that can bond to only a single person. The wielder and intelligent weapon can synchronize their reflexes and attack with frightening speed, accuracy, and creativity. Once bonded to a wielder, the weapon's persona will refuse to be wielded by anyone else.</description>
-		<soundInteract>Moyo_WeaponInteract</soundInteract>		
+		<soundInteract>moyo_mediumWeaponInteract</soundInteract>		
     <techLevel>Spacer</techLevel>
     <tradeability>Sellable</tradeability>
     <graphicData>
-			<texPath>Things/Weapons/Royal/MoyoGAutoCannon</texPath>
+			<texPath>Things/Weapons/Royal/MoyoGHMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1</drawSize>
 		</graphicData>
@@ -48,7 +48,7 @@
 				<burstShotCount>6</burstShotCount>	
 				<warmupTime>2</warmupTime>
 				<range>30.5</range>
-				<soundCast>Shot_Autocannon</soundCast>
+				<soundCast>moyo_defaultFire</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>11</muzzleFlashScale>
 			</li>
@@ -95,8 +95,8 @@
 
     <!-- increase damage for about 6~7 for weapons with 1 bullet per burst and by 5~3 for weapons with more -->
     <projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>26</damageAmountBase>
+			<damageDef>Moyo_ChargeBolt</damageDef>
+			<damageAmountBase>27</damageAmountBase>
 			<armorPenetrationBase>0.25</armorPenetrationBase>
 			<stoppingPower>2.5</stoppingPower>
 			<speed>70</speed>
